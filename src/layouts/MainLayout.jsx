@@ -43,7 +43,7 @@ const MainLayout = () => {
 				</div>
 			</div>
 			{/* Desktop */}
-			<div className='hidden w-full h-dvh px-4 py-2 lg:flex flex-col '>
+			<div className='hidden w-full h-dvh px-4 py-2 lg:flex flex-col'>
 				<div className='w-full h-full overflow-y-scroll flex-1 flex'>
 					<div className='w-3/12 h-full lg:w-2/12'>
 						<Navbar />

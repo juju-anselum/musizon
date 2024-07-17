@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../api/auth/firebase';
 import { toast } from 'react-toastify';
 
@@ -23,6 +23,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [error, setError] = useState({ userName: '', email: '', password: '', terms: '' });
+  const [quotes, setQuotes] = useState(LoginTexts[getRndInteger()]);
 
   const validSubmit = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -102,6 +103,26 @@ const SignUp = () => {
     }
   };
 
+  const signInWithGoogle = async () => {
+    try {
+      const userCredential = await signInWithPopup(auth, new GoogleAuthProvider());
+      const user = userCredential.user;
+      if (user) {
+        toast('Signed In Successfully.', {
+          type: 'success',
+          position: 'top-center',
+          autoClose: 1000,
+        })
+        navigate('/personalize');
+      }
+    } catch (error) {
+      toast('Sign In failed. Please try again later.', {
+        type: 'error',
+        position: 'top-center',
+        autoClose: 1000,
+      })
+    }
+  };
 
   return (
     <div className='w-full h-screen flex justify-evenly items-stretch'>
@@ -172,7 +193,7 @@ const SignUp = () => {
             <div className='w-1/4 h-[1px] bg-neutral-500'></div>
           </div>
           <div className='w-full'>
-            <SecondaryButton text='Login with Google' icon={GoogleLogo} onClick={() => { alert('Login with Google unavailable, Try using email and password.') }} />
+            <SecondaryButton text='Sign In with Google' icon={GoogleLogo} onClick={signInWithGoogle} />
           </div>
         </div>
       </div>
@@ -182,7 +203,7 @@ const SignUp = () => {
           <img src={LoginImage} alt="SignUp Image" className='w-full h-full object-cover' />
           <div className='w-full h-full absolute top-0 left-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent'></div>
           <p className='w-[80%] lg:w-[80%] absolute bottom-10 right-10 text-4xl lg:text-6xl font-semibold text-right font-lora tracking-wide leading-snug '>
-            {LoginTexts[getRndInteger()]}
+            {quotes}
           </p>
         </div>
       </div>

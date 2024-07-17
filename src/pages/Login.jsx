@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../api/auth/firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
 import { Logo, LoginImage, GoogleLogo } from '../assets'
@@ -15,10 +15,12 @@ const Login = () => {
         let min = 0;
         return Math.floor(Math.random() * (max - min)) + min;
     }
+
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState({ email: '', password: '', credential: '' });
+    const [quotes, setQuotes] = useState(LoginTexts[getRndInteger()]);
 
     const validSubmit = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -87,6 +89,29 @@ const Login = () => {
         }
     };
 
+    const googleSignIn = async () => {
+        try {
+            const userCredential = await signInWithPopup(auth, new GoogleAuthProvider());
+            const user = userCredential.user;
+
+            if (user) {
+                toast('Logged In Successfully.', {
+                    type: 'success',
+                    position: 'top-center',
+                    autoClose: 1000,
+                })
+                setTimeout(() => {
+                    navigate('/');
+                }, 1000);
+            }
+        } catch (e) {
+            toast('Login failed. Please try again later.', {
+                type: 'error',
+                position: 'top-center',
+                autoClose: 1000,
+            })
+        }
+    };
 
     return (
         <div className='w-full h-screen flex justify-evenly items-stretch'>
@@ -135,7 +160,7 @@ const Login = () => {
                         <div className='w-1/4 h-[1px] bg-neutral-500'></div>
                     </div>
                     <div className='w-full'>
-                        <SecondaryButton text='Login with Google' icon={GoogleLogo} onClick={() => { alert('Login with Google unavailable, Try using email and password.') }} />
+                        <SecondaryButton text='Login with Google' icon={GoogleLogo} onClick={googleSignIn} />
                     </div>
                 </div>
             </div>
@@ -145,7 +170,7 @@ const Login = () => {
                     <img src={LoginImage} alt="Login Image" className='w-full h-full object-cover' />
                     <div className='w-full h-full absolute top-0 left-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent'></div>
                     <p className='w-[80%] lg:w-[80%] absolute bottom-10 right-10 text-4xl lg:text-6xl font-semibold text-right font-lora tracking-wide leading-snug '>
-                        {LoginTexts[getRndInteger()]}
+                        {quotes}
                     </p>
                 </div>
             </div>

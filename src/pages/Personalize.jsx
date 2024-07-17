@@ -21,6 +21,7 @@ const SignUp = () => {
         let min = 0;
         return Math.floor(Math.random() * (max - min)) + min;
     }
+    
     const [LoginText] = useState(LoginTexts[getRndInteger()]);
     const [isFirstVisit, setIsFirstVisit] = useState(true);
     const status = useSelector((state) => state.fireStore?.status);
