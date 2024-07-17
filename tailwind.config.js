@@ -11,7 +11,7 @@ export default {
         'work-sans': ['Work Sans', 'sans-serif'],
       },
       colors: {
-        'primaryColor': '#141414D',
+        'primaryColor': '#141414',
         'primaryColorAccent': '#1f1f1f',
         'secondaryColor': '#e2eaee',
         'secondaryColorAccent': '#ecf1f3',
