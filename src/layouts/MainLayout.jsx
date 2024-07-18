@@ -52,7 +52,7 @@ const MainLayout = () => {
 						<Outlet />
 					</div>
 				</div>
-				<div className='w-full h-20'>
+				<div className='w-full'>
 					<PlayerControls />
 				</div>
 			</div>
