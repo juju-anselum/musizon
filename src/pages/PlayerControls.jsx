@@ -1,6 +1,6 @@
 const PlayerControls = () => {
     return (
-        <div>PlayerControls</div>
+        <div>Player</div>
     )
 }
 

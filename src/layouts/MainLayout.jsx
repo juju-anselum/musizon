@@ -31,8 +31,8 @@ const MainLayout = () => {
 	return (
 		<>
 			{/* Mobile */}
-			<div className='w-full h-dvh border-4 relative lg:hidden'>
-				<div className='w-full absolute bottom-0 px-4 flex flex-col gap-3'>
+			<div className='w-full h-dvh relative lg:hidden'>
+				<div className='w-full absolute bottom-0 flex flex-col gap-3'>
 					<div className='w-full px-4'>
 						<PlayerControls />
 					</div>
