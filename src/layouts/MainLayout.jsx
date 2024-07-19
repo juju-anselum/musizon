@@ -31,7 +31,7 @@ const MainLayout = () => {
 	return (
 		<>
 			{/* Mobile */}
-			<div className='w-full h-dvh relative lg:hidden'>
+			<div className='w-full h-dvh relative md:hidden'>
 				<div className='w-full absolute bottom-0 flex flex-col gap-3'>
 					<div className='w-full px-2'>
 						<PlayerControls />
@@ -43,7 +43,7 @@ const MainLayout = () => {
 				</div>
 			</div>
 			{/* Desktop */}
-			<div className='hidden w-full h-dvh px-4 py-2 lg:flex flex-col'>
+			<div className='hidden w-full h-dvh px-4 py-2 md:flex flex-col'>
 				<div className='w-full h-full overflow-y-scroll flex-1 flex'>
 					<div className='w-max h-full'>
 						<Navbar />

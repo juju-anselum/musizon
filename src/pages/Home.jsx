@@ -1,33 +1,16 @@
-import { SongCard1, SongCard2, AlbumCard1, AlbumCard2, ArtistCard1, ArtistCard2 } from '../components'
+import { Logo } from '../assets'
 
 const Home = () => {
 
-    const artistData = {
-        songName: 'Espresso',
-        artistName: 'Sabriana Carpenter',
-        posterURL: 'https://wwd.com/wp-content/uploads/2023/02/MGM8279.jpeg',
-        poster_url: 'https://wwd.com/wp-content/uploads/2023/02/MGM8279.jpeg',
-    }
-
-    const albumData = {
-        albumName: 'Alan Walker Mix',
-        artistName: 'Alan Walker',
-        posterURL: 'https://i1.sndcdn.com/artworks-000462643113-nks6oy-t500x500.jpg',
-    }
-
     return (
-        <>
-            <div className='flex flex-col  gap-20'>
-                <SongCard1 data={artistData} />
-                <div className='w-1/2'>
-                    <SongCard2 data={artistData} />
+        <div className='w-full'>
+            <div className="w-full h-max m-2 md:hidden">
+                <div className="w-max h-max flex items-center justify-start gap-4">
+                    <img src={Logo} alt="Logo" className='w-7' />
+                    <h1 className="font-lora font-medium text-2xl tracking-wide">MUSIZON</h1>
                 </div>
-                <AlbumCard1 data={albumData} />
-                <AlbumCard2 data={albumData} />
-                <ArtistCard1 data={artistData} />
-                <ArtistCard2 data={artistData} />
             </div>
-        </>
+        </div>
     )
 }
 
