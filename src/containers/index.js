@@ -1,0 +1,6 @@
+export {default as TrendingPairs} from './home/TrendingPairs.jsx'
+export { default as TrendingTracks } from './home/TrendingTracks'
+export { default as TrendingAlbums } from './home/TrendingAlbums'
+export { default as TrendingArtists } from './home/TrendingArtists'
+export { default as RecommendedTracks } from './home/RecommendedTracks'
+export { default as FavoriteTracks } from './home/FavoriteTracks'

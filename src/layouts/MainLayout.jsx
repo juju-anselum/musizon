@@ -32,23 +32,23 @@ const MainLayout = () => {
 		<>
 			{/* Mobile */}
 			<div className='w-full h-dvh relative md:hidden'>
-				<div className='w-full absolute bottom-0 flex flex-col gap-3'>
+				<div className='w-full absolute bottom-0 flex flex-col gap-3 z-10'>
 					<div className='w-full px-2'>
 						<PlayerControls />
 					</div>
 					<Navbar />
 				</div>
-				<div className='w-full h-full pb-80 p-4 overflow-y-scroll'>
+				<div className='w-full h-full pb-40 p-4 overflow-y-scroll no-scrollbar'>
 					<Outlet />
 				</div>
 			</div>
 			{/* Desktop */}
 			<div className='hidden w-full h-dvh px-4 py-2 md:flex flex-col'>
-				<div className='w-full h-full overflow-y-scroll flex-1 flex'>
+				<div className='w-full h-full overflow-y-scroll flex-1 flex no-scrollbar'>
 					<div className='w-max h-full'>
 						<Navbar />
 					</div>
-					<div className='flex-1 h-full overflow-hidden'>
+					<div className='flex-1 h-full overflow-y-scroll no-scrollbar'>
 						<Outlet />
 					</div>
 				</div>

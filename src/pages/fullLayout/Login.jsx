@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../api/auth/firebase';
+import { auth } from '../../api/auth/firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
-import { Logo, LoginImage, GoogleLogo } from '../assets'
-import { PrimaryButton, SecondaryButton } from '../components'
-import { LoginTexts } from '../assets/constant'
+import { Logo, LoginImage, GoogleLogo } from '../../assets'
+import { PrimaryButton, SecondaryButton } from '../../components'
+import { LoginTexts } from '../../assets/constant'
 
 const Login = () => {
 

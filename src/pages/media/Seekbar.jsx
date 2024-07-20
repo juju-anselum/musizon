@@ -4,7 +4,6 @@ const Seekbar = () => {
     const [value, setValue] = useState(100)
     return (
         <div>
-            {console.log(value)}
             <div className="w-full flex items-center justify-center">
                 <p className="text-white">0:00</p>
                 <input
