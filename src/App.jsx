@@ -18,9 +18,9 @@ function App() {
           <Route path="/trending" element={<Trending />} />
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/recommended" element={<Recommended />} />
-          <Route path="/song" element={<Song />} />
-          <Route path="/artist" element={<Artist />} />
-          <Route path="/album" element={<Album />} />
+          <Route path="/song/*" element={<Song />} />
+          <Route path="/artist/*" element={<Artist />} />
+          <Route path="/album/*" element={<Album />} />
         </Route>
         <Route element={<FullScreenLayout />}>
           <Route path="/login" element={<Login />} />

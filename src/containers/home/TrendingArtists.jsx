@@ -1,11 +1,25 @@
+import { useNavigate } from 'react-router-dom'
+import { DemoArtists } from '../../assets/constant'
 import { ArtistCard2 } from '../../components'
 
 const TrendingArtists = () => {
+  const navigate = useNavigate()
 
-  const data = {
-    songName: 'Espresso',
-    artistName: 'Sabriana Carpenter',
-    posterURL: 'https://wwd.com/wp-content/uploads/2023/02/MGM8279.jpeg',
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array
+  }
+
+  let data = shuffle(DemoArtists)
+
+
+  const handleClick = (item) => {
+    navigate(`/artist/${data.id}`, { state: { data: item } })
   }
 
   return (
@@ -13,8 +27,12 @@ const TrendingArtists = () => {
       <h3 className='text-xl md:text-2xl font-bold'>Top Artists</h3>
       <div className='w-full flex items-center justify-start gap-8 overflow-scroll no-scrollbar'>
         {
-          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item, index) => {
-            return <ArtistCard2 key={index} data={data} />
+          data.map((item, index) => {
+            return (
+              <div key={index} className='w-max'>
+                <ArtistCard2 data={item} onClick={() => handleClick(item)} />
+              </div>
+            )
           })
         }
       </div>

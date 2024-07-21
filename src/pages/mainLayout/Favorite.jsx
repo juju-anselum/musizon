@@ -1,19 +1,20 @@
 import { Logo } from "../../assets"
+import { DemoSongs } from "../../assets/constant";
 import { SongCard1 } from "../../components"
 
 const Favorite = () => {
 
-  const data = [
-    {
-      songName: `I'll treat you better`,
-      artistName: 'Shawn Mendes',
-      posterURL: 'https://pyxis.nymag.com/v1/imgs/ef6/6fe/c126de3c9e2afa273d7af54056c73eda10-shawn-mendes-feature-lede.2x.rvertical.w512.jpg',
-    }, {
-      songName: `I'll treat you better`,
-      artistName: 'Shawn Mendes',
-      posterURL: 'https://pyxis.nymag.com/v1/imgs/ef6/6fe/c126de3c9e2afa273d7af54056c73eda10-shawn-mendes-feature-lede.2x.rvertical.w512.jpg',
-    },
-  ]
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array
+  }
+
+  let data = shuffle(DemoSongs)
 
   return (
     <div className="w-full p-2 md:px-8 flex flex-col gap-4">
@@ -28,19 +29,18 @@ const Favorite = () => {
 
       {/* Content */}
 
+      <div className="w-full h-max lg:py-4 flex items-center justify-between">
+        <h1 className="font-lora font-medium text-2xl tracking-wide">Favorites</h1>
+      </div>
       {
         data.length > 1 ? (
-          data.map((item, index) => {
-            return (
-              <div className="w-full h-max grid gap-5 grid-cols-[repeat(auto-fill,minmax(170px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]" key={index}>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(i => (
-                  <div key={i} className='p-2'>
-                    <SongCard1 data={item} />
-                  </div>
-                ))}
+          <div className="w-full h-max grid gap-5 grid-cols-[repeat(auto-fill,minmax(170px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))]">
+            {data.map((item, i) => (
+              <div key={i} className='p-2'>
+                <SongCard1 data={item} />
               </div>
-            )
-          })
+            ))}
+          </div>
         ) : (
           <h1>No tracks added to Favorites.</h1>
         )

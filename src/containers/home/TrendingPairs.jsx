@@ -1,23 +1,22 @@
 import { AlbumCard2 } from "../../components"
+import { DemoAlbums } from "../../assets/constant"
 
 const TrendingPairs = () => {
 
-  const data = [
-    {
-      albumName: `I'll treat you better`,
-      artistName: 'Shawn Mendes',
-      posterURL: 'https://pyxis.nymag.com/v1/imgs/ef6/6fe/c126de3c9e2afa273d7af54056c73eda10-shawn-mendes-feature-lede.2x.rvertical.w512.jpg',
-    }, {
-      albumName: 'Espresso',
-      artistName: 'Sabriana Carpenter',
-      posterURL: 'https://wwd.com/wp-content/uploads/2023/02/MGM8279.jpeg',
-    }
-  ]
+  let rand = (Math.random() * (DemoAlbums.length - 1 - 3)) + 3
+
+  const data = DemoAlbums.slice(rand, rand + 2)
 
   return (
     <div className='w-full flex flex-col items-start gap-6 2xl:flex-row'>
       {
-        data.map((item, index) => <AlbumCard2 key={index} data={item} />
+        data.map((item, index) => {
+          return (
+            <div key={index} className="w-full">
+              <AlbumCard2 data={item} />
+            </div>
+          )
+        }
         )}
     </div>
   )

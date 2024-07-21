@@ -13,7 +13,7 @@ const Trending = () => {
 			</div>
 
 			{/* Content */}
-			<div className='w-full h-max py-4 flex flex-col items-stretch gap-12'>
+			<div className='w-full h-max py-8 px-2 flex flex-col items-stretch gap-12'>
 				<TrendingTracks />
 				<TrendingArtists />
 				<TrendingPairs />

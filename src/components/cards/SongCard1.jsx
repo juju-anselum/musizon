@@ -1,7 +1,15 @@
-const SongCard1 = ({data}) => {
+import { useNavigate } from 'react-router-dom'
+
+const SongCard1 = ({ data }) => {
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(`/song/${data.id}`, { state: { data } })
+  }
+
 
   return (
-    <div className='min-w-48 p-2 flex flex-col items-start gap-2 rounded-md transition-all duration-100 hover:bg-primaryColorAccent'>
+    <div className='min-w-48 p-2 flex flex-col items-start gap-2 rounded-md transition-all duration-100 hover:bg-primaryColorAccent' onClick={handleNavigate}>
       <img src={data.posterURL} alt={data.songName} className='w-full min-h-40 rounded-md object-cover' />
       <div className="w-full h-max flex flex-col items-start gap-1">
         <p className='w-full text-md truncate text-left text-secondaryColor font-normal lg:font-medium'>{data.songName}</p>
