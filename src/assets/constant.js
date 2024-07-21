@@ -112,62 +112,62 @@ export const CountryCodes = [
 
 export const Artists = [
     {
-        name: "Shawn Mendes",
+        artistName: "Shawn Mendes",
         id: "7n2wHs1TKAczGzO7Dd2rGr",
         poster_url: 'https://tse4.mm.bing.net/th/id/OIP.9joV5s0MvN_EcwVeGNXJlgAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Sabrina Carpenter",
+        artistName: "Sabrina Carpenter",
         id: "74KM79TiuVKeVCqs8QtB0B",
         poster_url: 'https://wwd.com/wp-content/uploads/2023/02/MGM8279.jpeg',
     },
     {
-        name: "Charlie Puth",
+        artistName: "Charlie Puth",
         id: "6VuMaDnrHyPL1p4EHjYLi7",
         poster_url: 'https://tse4.mm.bing.net/th/id/OIP.UIGjjWohYoEjVEPuotm3aQAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Ed Sheeran",
+        artistName: "Ed Sheeran",
         id: "6eUKZXaKkcviH0Ku9w2n3V",
         poster_url: 'https://tse1.mm.bing.net/th/id/OIP.By2SwqKzi0i7ZEp1hXuWbgAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Selena Gomez",
+        artistName: "Selena Gomez",
         id: "0C8ZW7ezQVs4URX5aX7Kqx",
         poster_url: 'https://tse3.mm.bing.net/th/id/OIP.8V_r6R8kQqgnw69MKbi2WQAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Sia",
+        artistName: "Sia",
         id: "5WUlDfRSoLAfcVSX1WnrxN",
         poster_url: 'https://tse1.mm.bing.net/th/id/OIP.Sz0A8RjozYOJmEExTBpfmQAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Justin Bieber",
+        artistName: "Justin Bieber",
         id: "1uNFoZAHBGtllmzznpCI3s",
         poster_url: 'https://tse4.mm.bing.net/th/id/OIP.3jmLr35Fu3VAzUesSq3s4QAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "The Chainsmokers",
+        artistName: "The Chainsmokers",
         id: "69GGBxA162lTqCwzJG5jLp",
         poster_url: 'https://imgix.bustle.com/wmag/2017/10/04/59d527cac9b25c05bb5049e4_1117.chainsmokers.lo15_View.jpg?w=262&h=350&fit=crop&crop=faces&auto=format%2Ccompress',
     },
     {
-        name: "ZAYN",
+        artistName: "ZAYN",
         id: "5ZsFI1h6hIdQRw2ti0hz81",
         poster_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Zayn_Wiki_(cropped).jpg/220px-Zayn_Wiki_(cropped).jpg',
     },
     {
-        name: "Camila Cabello",
+        artistName: "Camila Cabello",
         id: "4nDoRrQiYLoBzwC5BhVJzF",
         poster_url: 'https://tse4.mm.bing.net/th/id/OIP.7HeuyCfRMZXAvfPAi0mTdQAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Isabel LaRosa",
+        artistName: "Isabel LaRosa",
         id: "5arKwJZEvT5uKq4o0JfqR4",
         poster_url: 'https://tse3.mm.bing.net/th/id/OIP.ow4PHSoSV3RXF6uhR9NPxwAAAA?rs=1&pid=ImgDetMain',
     },
     {
-        name: "Wiz Khalifa",
+        artistName: "Wiz Khalifa",
         id: "137W8MRPWKqSmrBGDBFSop",
         poster_url: 'https://blogs-images.forbes.com/zackomalleygreenburg/files/2013/01/wiz-khalifa-music.jpg',
     },
@@ -350,7 +350,7 @@ export const DemoArtists = [
     },
 ]
 
-export const DemoLyris = `She was 19 with a baby on the way<br/>n the East-side of the city, she was working every day<br/>Cleaning dishes in the evening, she could barely stay awake<br/>She was clinging to the feeling that her luck was gonna change And, 'cross town she would take the bus at night<br/>To a one-bedroom apartment, and when she'd turn on the light<br/>She would sit down at the table, tell herself that it's alright<br/>She was waiting on the day she hoped her baby would arrive
+export const DemoLyris = `She was 19 with a baby on the way<br/>n the East-side of the city, she was working every day<br/>Cleaning dishes in the evening, she could barely stay awake<br/>She was clinging to the feeling that her luck was gonna changeAnd, 'cross town she would take the bus at night<br/>To a one-bedroom apartment, and when she'd turn on the light<br/>She would sit down at the table, tell herself that it's alright<br/>She was waiting on the day she hoped her baby would arrive
 She'd never be alone<br/>Have someone to hold<br/>And when nights were cold<br/>She'd say
 The world's not perfect, but it's not that bad<br/>If we got each other, and that's all we have<br/>I will be your mother, and I'll hold your hand<br/>You should know I'll be there for you<br/>When the world's not perfect, when the world's not kind<br/>If we have each other, then we'll both be fine<br/>I will be your mother, and I'll hold your hand\mYou should know I'll be there for you
 They were 90 and were living out their days<br/>On the West-side of the city next to where they got engaged<br/>They had pictures on the walls of all the memories that they'd made<br/>And though life was never easy, they were thankful that they stayed<br/>With each other, and though some times were hard<br/>Even when she made him angry, he would never break her heart<br/>No, they didn't have the money to afford a fancy car<br/>But they never had to travel 'cause they'd never be apart

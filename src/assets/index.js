@@ -1,4 +1,4 @@
-export { default as LoginImage } from './img/LoginImage.png';
+export { default as LoginImage } from './img/LoginImage.webp';
 export { default as Logo } from './svg/Logo.svg';
 export { default as GoogleLogo } from './svg/Google.svg';
 export { default as Home } from './svg/Home.svg';

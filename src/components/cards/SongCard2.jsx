@@ -9,7 +9,7 @@ const SongCard2 = ({ data }) => {
   }
 
   return (
-    <div className="w-full h-max px-4 py-3 flex items-center justify-between rounded-md transition-all duration-150 hover:bg-primaryColorAccent" onClick={handleNavigate}>
+    <div className="w-full h-max px-4 py-3 flex items-center justify-between rounded-md transition-all duration-150 hover:bg-primaryColorAccent cursor-pointer" onClick={handleNavigate}>
       <div className='w-max flex items-stretch gap-3'>
         <img src={data.posterURL} alt="image" className='w-12 lg:w-16 aspect-square  object-cover rounded-md' />
         <div className='flex flex-col items-start justify-end gap-2'>
