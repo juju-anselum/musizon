@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { auth } from '../api/auth/firebase';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +9,10 @@ import { fetchPreferencesAsync } from "../redux/slices/firestoreSlice";
 const MainLayout = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const location = useLocation();
+
+	const mobileContainerRef = useRef(null);
+	const desktopContainerRef = useRef(null);
 
 	const preferences = useSelector(state => state.fireStore?.preferences);
 	const status = useSelector(state => state.fireStore?.status);
@@ -18,9 +23,14 @@ const MainLayout = () => {
 				navigate('/login');
 			} else {
 				dispatch(fetchPreferencesAsync());
+				if (location.pathname.includes('/song') || location.pathname.includes('/artist') || location.pathname.includes('/album')) {
+					console.log('Scrolling: ' + location.pathname);
+					mobileContainerRef.current?.scrollTo(0, 0);
+					desktopContainerRef.current?.scrollTo(0, 0);
+				}
 			}
 		});
-	}, [dispatch, navigate]);
+	}, [dispatch, navigate, location.pathname]);
 
 	useEffect(() => {
 		if (status === 'Fetched' && preferences?.name === '') {
@@ -38,7 +48,7 @@ const MainLayout = () => {
 					</div>
 					<Navbar />
 				</div>
-				<div className='w-full h-full pb-40 p-4 overflow-y-scroll no-scrollbar'>
+				<div ref={mobileContainerRef} className='w-full h-full pb-40 p-4 overflow-y-scroll no-scrollbar'>
 					<Outlet />
 				</div>
 			</div>
@@ -48,7 +58,7 @@ const MainLayout = () => {
 					<div className='w-max h-full'>
 						<Navbar />
 					</div>
-					<div className='flex-1 h-full overflow-y-scroll no-scrollbar'>
+					<div ref={desktopContainerRef} className='flex-1 h-full overflow-y-scroll no-scrollbar'>
 						<Outlet />
 					</div>
 				</div>
